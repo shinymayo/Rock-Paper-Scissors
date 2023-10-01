@@ -7,7 +7,7 @@ getComputerChoice();
 
 function playerSelect() {
     let selection = prompt("Rock, paper, scissors - what do you choose?");
-    return selection;
+    return `You chose ${selection}`;
 }
 
 const one = "paper" > "rock";
