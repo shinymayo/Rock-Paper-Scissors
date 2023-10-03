@@ -8,11 +8,9 @@ function playerSelection() {
     let selection = prompt("Rock, paper, scissors - what do you choose?");
     console.log(`You chose ${selection}`);
 }
-//setting up variable for the gameRound function
-const computer = getComputerChoice();
-const player = playerSelection();
-
+// function to play a round of rock-paper-scissors
 function gameRound(computer, player) {
+    player = player.toLowerCase();
     if (player == "rock" && computer == "paper") {
         return ("You lose! Paper beats rock!");
     } else if (player == "paper" && computer == "rock") {
@@ -31,5 +29,10 @@ function gameRound(computer, player) {
         return ("It's a tie. Oh well...");
     } else if (player == "scissors" && computer == "scissors") {
         return ("It's a tie! Try again");
+    } else {
+        return ("Something is wrong. Try again");
     }
 }
+//setting up variable for the gameRound function
+const computer = getComputerChoice();
+const player = playerSelection();
