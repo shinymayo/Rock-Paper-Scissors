@@ -6,16 +6,23 @@
     <script src="javascript.js" defer></script>
 </head>
 <body>
-    <h1>Rock Paper Scissors Game</h1>
-    <h2>Choose your weapon! Score 5 times to be the winner!!!</h2>
-    <button id="play">Play</button>
-    <br>
-    <button class="btn btn-rock">Rock</button>
-    <button class="btn btn-paper">Paper</button>
-    <button class="btn btn-scissors">Scissors</button>    
-    <h3>Player Score:</h3>
-    <h3>Computer Score:</h3>
-    <div class="results">Results: </div>
+    <h1>Rock Paper Scissors</h1>
+    <div class="score-board">
+        <div id="user-label" class="badge">user</div>
+        <div id="computer-label" class="badge">comp</div>
+        <span id="user-score">0</span> : <span id="computer-score">0</span>
+    </div>
+
+    <div class="result">
+        <p>Paper covers rock. You win</p>
+    </div>
+    
+
+    <div class="choices">
+        <button class="choice" id="rock">Rock</button>
+        <button class="choice" id="paper">Paper</button>
+        <button class="choice" id="scissors">Scissors</button>
+    </div>
 
 
 </body>
