@@ -1,7 +1,7 @@
 let userScore = 0;
 let computerScore = 0;
-const userScore_span = document.getElementById("user-score");
-const computerScore_span = document.getElementById("computer-score");
+const userScoreDisplay = document.getElementById("user-score");
+const computerScoreDisplay = document.getElementById("computer-score");
 const scoreBoard_div = document.querySelector(".score-board");
 const result_p = document.querySelector(".result > p");
 const rock = document.getElementById("rock");
@@ -14,41 +14,41 @@ function getComputerChoice() {
   return choices[randomNumber];
 }
 
-function win(userChoice, computerChoice) {
+function win(playerSelection, computerSelection) {
   userScore++;
-  userScore_span.innerHTML = userScore;
-  computerScore_span.innerHTML = computerScore;
-  result_p.innerHTML = `${userChoice}  beats ${computerChoice}. You win!`;
+  userScoreDisplay.innerHTML = userScore;
+  computerScoreDisplay.innerHTML = computerScore;
+  result_p.innerHTML = `${playerSelection}  beats ${computerSelection}. You win!`;
 }
 
-function lose(userChoice, computerChoice) {
+function lose(playerSelection, computerSelection) {
   computerScore++;
-  userScore_span.innerHTML = userScore;
-  computerScore_span.innerHTML = computerScore;
-  result_p.innerHTML = `${userChoice} loses to ${computerChoice}!`;
+  userScoreDisplay.innerHTML = userScore;
+  computerScoreDisplay.innerHTML = computerScore;
+  result_p.innerHTML = `${playerSelection} loses to ${computerSelection}!`;
 }
 
-function draw(userChoice, computerChoice) {
-  result_p.innerHTML = `${userChoice} againsy ${computerChoice}. It's a draw!`;
+function draw(playerSelection, computerSelection) {
+  result_p.innerHTML = `${playerSelection} against ${computerSelection}. It's a draw!`;
 }
 
-function game(userChoice) {
-  const computerChoice = getComputerChoice();
-  switch (userChoice + computerChoice) {
+function game(playerSelection) {
+  const computerSelection = getComputerChoice();
+  switch (playerSelection + computerSelection) {
     case "rockscissors":
     case "paperrock":
     case "scisscorspaper":
-      win(userChoice, computerChoice);
+      win(playerSelection, computerSelection);
       break;
     case "rockpaper":
     case "paperscissors":
     case "scissorsrock":
-      lose(userChoice, computerChoice);
+      lose(playerSelection, computerSelection);
       break;
     case "rockrock":
     case "paperpaper":
     case "scissorsscissors":
-      draw(userChoice, computerChoice);
+      draw(playerSelection, computerSelection);
       break;
   }
 }
