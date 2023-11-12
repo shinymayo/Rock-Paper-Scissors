@@ -1,7 +1,8 @@
 * {
-    background-color: mistyrose;
+    background-color: #f7ede3;
     font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align: center;
+    color: #84a59e;
 
 }
 .score-board {
@@ -20,7 +21,7 @@
     margin: 5px;
 }
 button {
-  background-color: #EA4C89;
+  background-color: #f28582;
   border-radius: 8px;
   border-style: none;
   box-sizing: border-box;
@@ -48,5 +49,5 @@ button {
 
 button:hover,
 button:focus {
-  background-color: #F082AC;
+  background-color: #f5cac2;
 }
