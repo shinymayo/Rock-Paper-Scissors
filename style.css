@@ -5,10 +5,19 @@
 
 }
 .score-board {
-    border: 2px solid darkred;
+    /* border: 2px solid darkred; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
-.choices {
-    border: 1px solid darkorchid;
+.players {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.badge {
+    /* border: 3px solid darkblue; */
+    margin: 5px;
 }
 button {
   background-color: #EA4C89;
@@ -34,6 +43,7 @@ button {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  width: 87px;
 }
 
 button:hover,
