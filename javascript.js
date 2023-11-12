@@ -18,18 +18,18 @@ function win(playerSelection, computerSelection) {
   userScore++;
   userScoreDisplay.innerHTML = userScore;
   computerScoreDisplay.innerHTML = computerScore;
-  result_p.innerHTML = `${playerSelection}  beats ${computerSelection}. You win!`;
+  result_p.textContent = `${playerSelection}  beats ${computerSelection}. You win!`;
 }
 
 function lose(playerSelection, computerSelection) {
   computerScore++;
   userScoreDisplay.innerHTML = userScore;
   computerScoreDisplay.innerHTML = computerScore;
-  result_p.innerHTML = `${playerSelection} loses to ${computerSelection}!`;
+  result_p.textContent = `${playerSelection} loses to ${computerSelection}!`;
 }
 
 function draw(playerSelection, computerSelection) {
-  result_p.innerHTML = `${playerSelection} against ${computerSelection}. It's a draw!`;
+  result_p.textContent = `${playerSelection} against ${computerSelection}. It's a draw!`;
 }
 
 function game(playerSelection) {
@@ -51,17 +51,24 @@ function game(playerSelection) {
       draw(playerSelection, computerSelection);
       break;
   }
+  checkWinner();
+}
+
+function checkWinner() {
+  if (userScore === 5 || computerScore === 5) {
+    if (userScore === computerScore){
+      result_p.textContent = "This game ends in a tie";
+    } else if (userScore === 5) {
+      result_p.textContent = "You win the game!";
+    } else {
+      result_p.textContent = "Computer wins the game!";
+    }
+  }
 }
 
 function main() {
-  rock.addEventListener("click", function () {
-    game("rock");
-  });
-  paper.addEventListener("click", function () {
-    game("paper");
-  });
-  scissors.addEventListener("click", function () {
-    game("scissors");
-  });
+  rock.addEventListener("click", () => game("rock"));
+  paper.addEventListener("click", () => game("paper"));
+  scissors.addEventListener("click", () => game("scissors"));
 }
 main();
